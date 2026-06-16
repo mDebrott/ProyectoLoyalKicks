@@ -1,6 +1,6 @@
-package com.loyalkicksproyecto.service_pedido.model;
+package com.loyalkicksproyect.service_cliente.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,19 +15,22 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pedido 
+public class Cliente 
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
-    private Long clienteId; //Lo dejo aqui para cuando tengamos el servicio de cliente
+    private String nombre;
 
     @NotNull
-    private LocalDateTime fecha;
+    private String apellido;
 
-    private String estado; // estados posible pendiente, confirmado, cancelado
+    @NotNull
+    private String email;
 
-    private Double total;
+    private String telefono;
+    private String direcion;
+    private LocalDate fechaRegistro;        
 }
